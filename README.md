@@ -115,8 +115,6 @@ Running webserv is as easy as:
 
 You just need to provide it with a configuration file.
 
---------
-
 You can find some example configuration files which cover a series of basic use cases in the [conf](./conf/) directory.<br>
 As shown in the previous example, you can use one to start your server.
 
@@ -130,9 +128,9 @@ To visualize a basic example configuration, see [default.conf](./conf/default.co
 
 A server block must be provided:
 
-```json
+```conf
 server {
-	// ...
+	# ...
 }
 ```
 
@@ -212,27 +210,27 @@ Optionally specify any arguments within the block, no single option is required 
 
 They can be specified within the server block as:
 
-```json
+```conf
 location /route {
-	// ...
+	# ...
 }
 ```
 
 Example:
 
-```json
+```conf
 server {
 
-	// ...
+	# ...
 
-	/* Root route */
+	# Root route
 	location / {
-		// ...
+		# ...
 	}
 
-	/* images route */
+	# images route
 	location /images {
-		// ...
+		# ...
 	}
 }
 ```
