@@ -49,6 +49,12 @@ download a precompiled version here:
 | 1.0 Debug   | [webserv_debug](https://github.com/DontCallMeLuca/WebServ/releases/tag/v1.0/webserv_debug) |
 | 1.0 Release | [webserv](https://github.com/DontCallMeLuca/WebServ/releases/tag/v1.0/webserv) |
 
+### 🌐 Requirements
+
+- Any linux platform
+- [g++](https://gcc.gnu.org/) or [clang++](https://clang.llvm.org/)
+- [make](https://www.gnu.org/s/make/manual/make.html)
+
 ### ⭐ Getting Started
 
 1. Clone the repository:
@@ -62,12 +68,6 @@ git clone https://github.com/DontCallMeLuca/WebServ.git
 ```sh
 cd WebServ
 ```
-
-### 🌐 Requirements
-
-- Any linux platform
-- [g++](https://gcc.gnu.org/) or [clang++](https://clang.llvm.org/)
-- [make](https://www.gnu.org/s/make/manual/make.html)
 
 ### ⚙ Makefile
 
