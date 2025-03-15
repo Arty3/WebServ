@@ -1,0 +1,25 @@
+# Compiled Object files
+*.o
+
+# Executables
+webserv
+webserv_debug
+
+# Build directories
+obj/
+debug_obj/
+bin/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+.vs/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+*~
+.*.swp
+.DS_Store

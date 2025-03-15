@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Webserv</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #495057;
+            margin: 0;
+        }
+        header p {
+            color: #6c757d;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        .section h2 {
+            font-size: 1.8em;
+            color: #343a40;
+            margin-bottom: 15px;
+        }
+        .test-links {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .test-links a {
+            flex: 1;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .test-links a:hover {
+            background-color: #0056b3;
+        }
+        form {
+            margin: 20px 0;
+        }
+        form p {
+            font-size: 1em;
+            color: #495057;
+        }
+        form input[type="file"],
+        form input[type="text"],
+        form select {
+            margin: 10px 0;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to Webserv</h1>
+    <p>Explore the features and test the capabilities of your server</p>
+</header>
+
+<div class="section">
+    <h2>Server Features Test</h2>
+    <div class="test-links">
+        <a href="/nonexistent.html">Test 404 Error Page</a>
+        <a href="/upload">Test Directory Listing (if enabled)</a>
+    </div>
+</div>
+
+<div class="section">
+    <h2>File Upload Test</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <p>Select a file to upload:</p>
+        <input type="file" name="file" accept="*/*">
+        <input type="submit" value="Upload File">
+    </form>
+</div>
+
+<div class="section">
+    <h2>File Delete Test</h2>
+    <form id="deleteForm" onsubmit="handleDelete(event)">
+        <p>Select a file to delete:</p>
+        <input type="file" name="file" accept="*/*" id="fileToDelete" required>
+        <input type="submit" value="Delete File">
+    </form>
+</div>
+
+<div class="section">
+    <h2>HTTP Methods Test</h2>
+    <p>This server supports <strong>GET</strong>, <strong>POST</strong>, and <strong>DELETE</strong> methods.</p>
+</div>
+
+<footer>
+    <p>&copy; 2025 Webserv. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleDelete(event) {
+        event.preventDefault();
+        const fileInput = document.getElementById('fileToDelete');
+        if (!fileInput.files || !fileInput.files[0]) {
+            alert('Please select a file to delete');
+            return;
+        }
+
+        const filename = fileInput.files[0].name;
+        if (!confirm(`Are you sure you want to delete ${filename}?`)) {
+            return;
+        }
+
+        fetch('/upload/' + filename, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('File deleted successfully');
+                    fileInput.value = ''; // Reset file input
+                } else {
+                    alert('Error deleting file: ' + response.status);
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+            });
+    }
+</script>
+</body>
+</html>
