@@ -27,6 +27,7 @@ These requirements are automatically checked at compile time via the makefile.
 ## ✨ Features
 
 - CGI support
+- No external dependencies
 - Fully documented functions
 - Highly performant
 - Thoroughly tested
