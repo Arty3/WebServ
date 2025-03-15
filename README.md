@@ -247,7 +247,7 @@ Consider this is expected in the root directory of the server.
 --------
 
 ```html
-allowed_methods <?method1> <?method2> <?method3>;
+allowed_methods <method1> <method2> <method3>;
 ```
 
 The allowed http methods for the route, valid methods include: `GET`, `POST` and `DELETE`.<br>
