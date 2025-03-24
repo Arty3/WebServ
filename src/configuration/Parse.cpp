@@ -87,6 +87,11 @@ void Parse::parse_location_block(
 			"Location block missing opening brace"
 		);
 
+	if (location_file_path_end_index <= location_file_path_start_index)
+		throw std::runtime_error(
+			"Invalid file file path value found, potentially causes vulnerability"
+		);
+
 	std::string location_file_path = location_line.substr(
 		location_file_path_start_index,
 		location_file_path_end_index - location_file_path_start_index
