@@ -77,8 +77,15 @@ void Parse::parse_location_block(
 			"Location block missing location keyword"
 		);
 
+	const size_t location_keyword_length = sizeof("location") - 1;
+
+	if (location_keyword_start_index > std::string::npos - location_keyword_length)
+		throw std::runtime_error(
+			"Invalid file file path value found, potentially causes vulnerability"
+		);
+
 	const size_t location_file_path_start_index = location_keyword_start_index
-												+ sizeof("location") - 1;
+												+ location_keyword_length;
 
 	const size_t location_file_path_end_index = location_line.find('{');
 
