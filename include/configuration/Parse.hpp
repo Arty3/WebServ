@@ -71,7 +71,7 @@ private:
 	*
 	* @param file_path Input stream of the configuration file
 	*/
-	void parse_server_block(std::istream &file_path) const;
+	void parse_server_block(std::istream& file_path) const;
 
 	/**
 	* @brief Parses the server name from the configuration line.

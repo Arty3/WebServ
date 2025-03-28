@@ -4,16 +4,11 @@
 
 ServerConfiguration::ServerConfiguration() : current_url_route(nullptr) {}
 
-void ServerConfiguration::start_url_route(const std::string &file_path, const int port)
+void ServerConfiguration::start_url_route(const std::string& file_path, const int port)
 {
-	auto ret = url_routes.emplace(file_path);
+	url_routes.push_back(Route(file_path));
 
-	if (!ret.second)
-		throw std::runtime_error(
-			"Invalid URL route: Duplicate URL route"
-		);
-
-	current_url_route = const_cast<Route*>(&(*ret.first));
+	current_url_route = &url_routes.back();
 	current_url_route->set_filesystem_root(root_directory);
 	current_url_route->set_server_listening_port(port);
 }

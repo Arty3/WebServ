@@ -1,5 +1,7 @@
 #pragma once
 
+#include "server/Server.hpp"
+
 #include <string>
 
 namespace Utils
@@ -16,4 +18,14 @@ namespace Utils
 	 * @throws std::runtime_error If file operations fail
 	 */
 	std::string read_file(const std::string& file_path);
+
+	/**
+	 * Registers a signal handler function for SIGINT and SIGQUIT
+	 * such that the server can exit gracefully.
+	 *
+	 * @param instance The server instance required to stop it
+	 * 
+	 * @throws std::runtime_error If assigning the handler fails
+	 */
+	void register_signal_handler(Server* instance);
 }

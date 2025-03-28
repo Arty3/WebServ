@@ -49,6 +49,8 @@ download a precompiled version here:
 |:--------|:-------|
 | 1.0 Debug   | [webserv_debug](https://github.com/DontCallMeLuca/WebServ/releases/download/v1.0/webserv_debug) |
 | 1.0 Release | [webserv](https://github.com/DontCallMeLuca/WebServ/releases/download/v1.0/webserv) |
+| 1.1 Debug   | [webserv_debug](https://github.com/DontCallMeLuca/WebServ/releases/download/v1.1/webserv_debug) |
+| 1.1 Release | [webserv](https://github.com/DontCallMeLuca/WebServ/releases/download/v1.1/webserv) |
 
 ### 🌐 Requirements
 

@@ -12,6 +12,8 @@
 #include "server/Server.hpp"
 #include "server/RequestManager.hpp"
 
+#include "utils/utils.hpp"
+
 Server::Server(const ServerConfiguration* configuration)
 	:	socket_address_configuration{},
 		server_configuration(configuration)
@@ -144,6 +146,8 @@ void Server::setup_server()
 		throw std::runtime_error(
 			"No valid ports to bind and listen to. Exiting..."
 		);
+
+	Utils::register_signal_handler(this);
 }
 
 void Server::handle_client_write(const size_t index)
@@ -513,7 +517,9 @@ void Server::start_server()
 	std::cout << server_configuration->get_server_configuration_string() << "\n";
 	std::cout << "Ready.\n\n";
 
-	while (1)
+	set_server_running(true);
+
+	while (server_running)
 	{
 		const int poll_result = poll(
 			poll_file_descriptors.data(),

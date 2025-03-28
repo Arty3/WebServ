@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <vector>
 #include <string>
 #include <sstream>
 #include <unordered_set>
@@ -120,10 +121,10 @@ public:
 	/**
 	 * @brief Retrieves all configured URL routes.
 	 *
-	 * @return const std::unordered_set<Route>& An unordered_set of all configured routes
+	 * @return const std::vector<Route>& An unordered_set of all configured routes
 	 */
 	[[nodiscard]] __attribute__((always_inline))
-	const std::unordered_set<Route>& get_url_routes() const noexcept
+	const std::vector<Route>& get_url_routes() const noexcept
 	{
 		return url_routes;
 	}
@@ -316,7 +317,7 @@ private:
 	size_t request_read_size		= _DEFAULT_REQUEST_READ_SIZE;
 
 	std::unordered_set<int>				server_listening_ports;
-	std::unordered_set<Route>			url_routes;
+	std::vector<Route>					url_routes;
 	std::map<std::string, std::string>	server_names;
 
 	Route*		current_url_route;

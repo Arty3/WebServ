@@ -78,6 +78,28 @@ public:
 	*/
 	void start_server();
 
+	/**
+	* @brief Sets the main server loop flag
+	*
+	* @param value The flag to determine if the server is running or not
+	*/
+	__attribute__((always_inline))
+	void set_server_running(bool value)
+	{
+		server_running = value;
+	}
+
+	/**
+	* @brief Gets the current state of the server loop flag
+	*
+	* @return bool Current state of the server (true if running, false otherwise)
+	*/
+	[[nodiscard]] __attribute__((always_inline))
+	bool get_server_running()
+	{
+		return server_running;
+	}
+
 private:
 	int							main_socket_file_descriptor;
 	sockaddr_in					socket_address_configuration;
@@ -87,6 +109,8 @@ private:
 
 	std::map<int, HttpRequest>	client_http_requests;
 	const ServerConfiguration*	server_configuration;
+
+	bool 						server_running;
 
 	/**
 	* @brief Sets up poll file descriptors for monitoring socket events

@@ -51,7 +51,8 @@ SRC			:=	src/main.cpp								\
 				src/server/RequestManager.cpp				\
 				src/configuration/Route.cpp					\
 				src/cgi/CGIHandler.cpp						\
-				src/utils/read_file.cpp
+				src/utils/read_file.cpp						\
+				src/utils/signal_handler.cpp
 
 HEADERS		:=	include/server/Server.hpp						\
 				include/configuration/ServerConfiguration.hpp	\
