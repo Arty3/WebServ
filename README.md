@@ -38,6 +38,14 @@ These requirements are automatically checked at compile time via the makefile.
 - RFC 2616 HTTP/1.1 Standard support
 - GET, POST and DELETE request support
 
+## 🌌 Showcase
+
+| Running WebServ |
+|:---------------:|
+| ![console.png](./screenshots/console.png) |
+| <b>Serving a Website</b> |
+| ![example_website.png](./screenshots/example_website.png) |
+
 ## 🚀 Installation
 
 ### 🎉 Precompiled
