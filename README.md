@@ -55,8 +55,8 @@ download a precompiled version here:
 
 | Release | Binary |
 |:--------|:-------|
-| 1.0 | [webserv](https://github.com/DontCallMeLuca/WebServ/releases/download/v1.0/webserv) |
-| 1.1 | [webserv](https://github.com/DontCallMeLuca/WebServ/releases/download/v1.1/webserv) |
+| 1.0 | [webserv](https://github.com/Arty3/WebServ/releases/download/v1.0/webserv) |
+| 1.1 | [webserv](https://github.com/Arty3/WebServ/releases/download/v1.1/webserv) |
 
 ### 🌐 Requirements
 
@@ -69,7 +69,7 @@ download a precompiled version here:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/DontCallMeLuca/WebServ.git
+git clone https://github.com/Arty3/WebServ.git
 ```
 
 2. cd into it:
@@ -366,7 +366,7 @@ flowchart TD
 
 ## 💡 Feedback
 
-If you have any feedback, including suggestions, bug reports, or potential vulnerabilities, please don't hesitate to submit them in the [issues](https://github.com/DontCallMeLuca/WebServ/issues) section. If applicable, kindly provide detailed descriptions and replication steps to help me address them effectively.
+If you have any feedback, including suggestions, bug reports, or potential vulnerabilities, please don't hesitate to submit them in the [issues](https://github.com/Arty3/WebServ/issues) section. If applicable, kindly provide detailed descriptions and replication steps to help me address them effectively.
 
 ## 📃 License
 
